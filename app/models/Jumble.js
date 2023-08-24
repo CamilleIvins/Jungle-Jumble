@@ -18,11 +18,23 @@ export class Jumble {
         return /*html*/`
         <button onclick="app.JumblesController.setActive('${this.id}')" >Start</button>
         <span>${this.name}</span>
-        <span>Fastest Speed</span>
+        <span>Fastest Speed:${this.fastestTime}</span>
         <span>WPM</span>
        `
     }
 
+
+    get activeTemplate() {
+        return /*html*/`
+        <section class="row">
+    <div class="col-4">${this.name}</div>
+    <div class="col-4 justify-content-end">${this.fastestTime}</div>
+</section>
+<section class="row">
+    <div class="col-12">${this.body}</div>
+</section>
+`
+    }
     // draw active jumble template
 }
 

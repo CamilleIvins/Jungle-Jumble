@@ -22,16 +22,18 @@ export const router = [
     <Title>Jungle Jumble</Title>
     <section class="row justify-content-between">
       <div class="col-8">
-        <div id="active-jumble" class="col-10">ACTIVE JUMBLE HERE</div> //TODO - this is where you put the active Jumble
+        <div id="active-jumble" class="col-10">Choose a Jumble ➡️</div>
         <div class="col-10">
-          <textarea class="w-100" name="" id="" cols="30" rows="10" placeholder="type here!"></textarea> //TODO - fill
-          in id and name
-          <button class="btn btn-info">Submit</button>
+          <textarea class="w-100" name="" id="challenge" cols="30" rows="10" placeholder="type here!"></textarea>
+          
+          <button onclick="app.JumblesController.spellCheck()" class="btn btn-info">Submit</button>
+          <span>
+          <button onclick="app.JumblesController.startTime()" class="btn btn-info">Start Time: <span id="timer"></span></button>
+          </span>
         </div>
       </div>
       <div class="col-3">Jumbles!
         <div id="jumbles-list" class="row"></div>
-        <span></span> // this is where the saved jumbles will go
   
       </div>
     </section>

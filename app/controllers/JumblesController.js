@@ -21,7 +21,7 @@ function _drawActive() {
     console.log('activedraw');
     let active = AppState.activeJumble
     console.log(AppState.activeJumble);
-    setHTML('active-jumble', active.name)
+    setHTML('active-jumble', active.activeTemplate)
     console.log('from draw');
 }
 
@@ -33,9 +33,31 @@ export class JumblesController {
     }
 
     setActive(jumbleId) {
-        debugger
+        // debugger
         jumblesService.setActive(jumbleId)
 
+        // setHTML('active-jumble',)
+
+    }
+
+    spellCheck() {
+
+        let challenge = document.getElementById('challenge')
+        // @ts-ignore
+        if (challenge.value == AppState.activeJumble.body) {
+            window.alert('Success')
+        } else {
+            window.alert('failure, try again')
+        }
+    }
+    startTimeInt(time) {
+        time++
+    }
+
+    startTime() {
+
+        console.log("timer");
+        setInterval(this.startTime, 1000)
     }
 
 }
