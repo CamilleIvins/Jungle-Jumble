@@ -42,22 +42,29 @@ export class JumblesController {
 
     spellCheck() {
 
-        let challenge = document.getElementById('challenge')
-        // @ts-ignore
-        if (challenge.value == AppState.activeJumble.body) {
-            window.alert('Success')
-        } else {
-            window.alert('failure, try again')
-        }
+        // let challenge = document.getElementById('challenge')
+        // // @ts-ignore
+        // if (challenge.value == AppState.activeJumble.body) {
+        //     window.alert('Success')
+        // } else {
+        //     window.alert('failure, try again')
+        // }
+
+        jumblesService.spellCheck()
     }
-    startTimeInt(time) {
-        time++
+    startTimeInt() {
+        // time++
     }
 
     startTime() {
 
+        AppState.time++
         console.log("timer");
         setInterval(this.startTime, 1000)
+        document.getElementById('timer').innerText = AppState.time
+        //     if (AppState.time == 60) {
+        //         spellCheck()
+        //     }
     }
 
 }

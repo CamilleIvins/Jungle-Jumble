@@ -10,11 +10,33 @@ class JumblesService {
         console.log(jumbleId);
     }
 
+    spellCheck() {
+        let challenge = document.getElementById('challenge')
+        // @ts-ignore
+        if (challenge.value == AppState.activeJumble.body) {
+            window.alert('Success')
+        } else {
+            window.alert('failure, try again')
+        }
+    }
+
     startTime() {
         // start time at zero and count up
         // end time at one minute
         // record time == fastest time
         // save fastest time to local storage
+        // document.getElementById('timer').innerText = AppState.time
+        if (AppState.time == 60) {
+            // debugger
+            let challenge = document.getElementById('challenge')
+            // @ts-ignore
+            if (challenge.value == AppState.activeJumble.body) {
+                window.alert('Success')
+            } else {
+                window.alert('failure, try again')
+            }
+        }
+
     }
 
 }
